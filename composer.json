@@ -27,7 +27,8 @@
   "extra": {
     "patches": {
       "drupal/entity_browser": {
-        "Fix bug when wysiwyg embedding if a video is already embedded https://www.drupal.org/node/2822961": "https://www.drupal.org/files/issues/embedded_video_breaks-2822961-2.patch"
+        "Fix bug when wysiwyg embedding if a video is already embedded https://www.drupal.org/node/2822961": "https://www.drupal.org/files/issues/embedded_video_breaks-2822961-2.patch",
+        "Fixed the issue of Call to a member function getConfigDependencyKey() on null on [Widget view], and [SelectionDisplay view] https://www.drupal.org/node/2845037#comment-11876613": "https://www.drupal.org/files/issues/2845037-4.patch"
       }
     }
   }
