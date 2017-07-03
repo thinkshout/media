@@ -2,6 +2,8 @@ uuid: 39147093-c7a1-41b0-9773-b013ad388a50
 langcode: en
 status: true
 dependencies:
+  config:
+    - views.view.media_library
   module:
     - entity_browser_entity_form
     - views
