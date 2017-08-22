@@ -28,6 +28,9 @@
     "patches": {
       "drupal/entity_browser": {
         "Fix bug when wysiwyg embedding if a video is already embedded https://www.drupal.org/node/2822961": "https://www.drupal.org/files/issues/embedded_video_breaks-2822961-2.patch"
+      },
+      "drupal/crop": {
+        "Public folder check in crop_file_url_alter() is incorrect, does not work for responsive images https://www.drupal.org/node/2868339": "https://www.drupal.org/files/issues/crop-file-alter-make-it-really-work-2868339-4.patch"
       }
     }
   }
