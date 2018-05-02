@@ -12,15 +12,13 @@ use Drupal\Core\Link;
  * Implements hook_requirements().
  */
 function ts_media_requirements($phase) {
-  $link = Link::fromTextAndUrl(t('here'), Url::fromUri('https://github.com/thinkshout/media/tree/ts_media_2',array()))->toString();
-
-  if ($phase == 'install' && $this->moduleHandler->moduleExists('media')) {
+  if ($phase == 'install' && \Drupal::moduleHandler()->moduleExists('media')) {
     $requirements['media'] = [
-      'title' => t('Media conflict'),
-      'value' => t('A media module is installed'),
+      'title' => t('Media'),
+      'value' => t('Core or Contrib'),
       'description' => t(
         'The ts_media module should not be installed if a media module is already installed. For a path forward, visit @url',
-        ['@url' => $link]
+        ['@url' => 'https://github.com/thinkshout/media/tree/ts_media_2#debugging-errors-on-install-or-update']
       ),
       'severity' => REQUIREMENT_ERROR,
     ];
