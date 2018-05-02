@@ -9,7 +9,7 @@ to avoid conflicting with Drupal's core media module.
 ## How to use this version of the TS media module.
 
 If you've been previously using the default branch of the thinkshout/media module
-through composer, updating to this version is easy.
+through composer, updating to this version is a two-step process.
 
 1. Uninstall the thinkshout media module:
 
@@ -32,6 +32,25 @@ and replace it with
 3. Run `composer update` to get the latest thinkshout/ts_media module.
 
 4. Install ts_media `drush en ts_media`
+
+From here down, you can only proceed if your database already believes the media module is uninstalled. You will need to deploy
+the code above to your database before you can proceed. This means two deploys, which can be done sequentially or over time.
+
+5. Upgrade to ts_media_2
+
+In your composer.json file find:
+
+```
+"thinkshout/media": "dev-ts_media",
+```
+
+and replace it with
+
+```
+"thinkshout/media": "dev-ts_media_2",
+```
+
+6. Run `drush updb` -- this should convert all your media_entity items into media items.
 
 ## Things to check after installing
 
