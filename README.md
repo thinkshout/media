@@ -1,42 +1,45 @@
-# Media Module (ThinkShout Edition)
-
-[![Build Status](https://travis-ci.org/thinkshout/media.svg?branch=8.x-1.x)](https://travis-ci.org/thinkshout/media) [![Scrutinizer](https://scrutinizer-ci.com/g/thinkshout/media/badges/quality-score.png?b=8.x-1.x)](https://scrutinizer-ci.com/g/thinkshout/media/?branch=8.x-1.x)
+# TS Media Module (ThinkShout Edition)
 
 ## Introduction
 
-The Media module provides an extensible framework for managing files and multimedia assets, regardless of whether they are hosted on your own site or a 3rd party site.
+Originally built to allow some updates to the existing Media module, this stripped-down version
+provides the minimum amount of functionality and frees up the "media" namespace
+to avoid conflicting with Drupal's core media module.
 
-Media's aim is to solve Drupal's long standing media handling problem.
+## How to use this version of the TS media module.
 
-## Requirements
+If you've been previously using the default branch of the thinkshout/media module
+through composer, updating to this version is easy.
 
-* [Media Entity](https://www.drupal.org/project/media_entity)
-* [Media Entity Image](https://www.drupal.org/project/media_entity_image)
-* [Video Embed Field](https://www.drupal.org/project/video_embed_field)
-* [Media Entity Slideshow](https://www.drupal.org/project/media_entity_slideshow)
-* [Media Entity Instagram](https://www.drupal.org/project/media_entity_instagram)
-* [Media Entity Twitter](https://www.drupal.org/project/media_entity_twitter)
-* [Media Entity Document](https://www.drupal.org/project/media_entity_document)
-* [Slick Media](https://www.drupal.org/project/slick_media)
-* [Entity Browser](https://www.drupal.org/project/entity_browser)
-* [Dropzonejs](https://www.drupal.org/project/dropzonejs)
-* [Image Widget Crop](https://www.drupal.org/project/image_widget_crop)
+1. Uninstall the thinkshout media module:
 
-## Installation
+`drush pmu media`
 
-After downloading the module in the modules folder, visit the Extend (/admin/modules) page to enable the module. You might have to install the modules required before enabling this module.
+2. Update your composer.json file:
 
-## Configuration
+In your composer.json file find:
 
-1. Enable the module
-2. visit /media/add to add media content to website.
-3. Visit /admin/structure/media to edit the default media bundles.
+```
+"thinkshout/media": "dev-8.x-1.x",
+```
 
-## Technical details
+and replace it with
 
-@ToDo
+```
+"thinkshout/media": "dev-ts_media",
+```
 
-## Maintainers
+3. Run `composer.update` to get the latest thinkshout/ts_media module.
 
-@ToDo
+4. Install ts_media `drush en ts_media`
 
+## Things to check after installing
+
+The Thinkshout Media module didn't really do a whole lot, so if you've just
+switched to the new version there are only a few things to check.
+
+- There is a Media link in the admin toolbar and a button to "Add a new Media" below it.
+- There is a button to "Add media" on the /admin/content/media page
+- The /admin/content/media page looks somewhat themed.
+
+and of course, test adding media to some items, both embedded and as a field.
