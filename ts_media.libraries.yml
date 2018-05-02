@@ -1,10 +1,10 @@
 view:
   version: VERSION
   js:
-    js/media.view.js: {}
+    js/ts_media.view.js: {}
   css:
     theme:
-      css/media.view.css: {}
+      css/ts_media.view.css: {}
   dependencies:
     - core/jquery
     - core/drupal
