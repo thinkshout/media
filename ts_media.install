@@ -44,3 +44,24 @@ function ts_media_requirements($phase) {
 
   return $requirements;
 }
+
+
+/**
+ * Removes references to media_entity_document and media_entity_image.
+ */
+function ts_media_update_8201() {
+  db_query('DELETE FROM key_value WHERE collection=\'system.schema\' AND name=\'media_entity_document\'');
+  db_query('DELETE FROM key_value WHERE collection=\'system.schema\' AND name=\'media_entity_image\'');
+}
+
+/**
+ * Implements hook_update_dependencies().
+ */
+function ts_media_update_dependencies() {
+  $dependencies = [];
+
+  // Run ts_media_update_8201 after media_entity update 8201.
+  $dependencies['ts_media'][8201]['media_entity'] = 8201;
+
+  return $dependencies;
+}
