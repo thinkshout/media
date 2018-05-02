@@ -29,7 +29,7 @@ and replace it with
 "thinkshout/media": "dev-ts_media",
 ```
 
-3. Run `composer.update` to get the latest thinkshout/ts_media module.
+3. Run `composer update` to get the latest thinkshout/ts_media module.
 
 4. Install ts_media `drush en ts_media`
 
