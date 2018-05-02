@@ -33,7 +33,7 @@ function ts_media_requirements($phase) {
         foreach ($checks['errors'] as $key => $error_msg) {
           $requirements['media_entity_upgrade_' . $key] = [
             'title' => t('Media Entity'),
-            'value' => t('If you see an error about needing to uninstall a contributed Media module, visit @url', ['@url' => $link]),
+            'value' => t('The media_entity module still thinks this is a contributed media module. To fix, see @url', ['@url' => 'https://github.com/thinkshout/media/tree/ts_media_2#debugging-errors-on-install-or-update']),
             'description' => $error_msg,
             'severity' => REQUIREMENT_ERROR,
           ];
