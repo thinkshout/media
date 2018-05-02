@@ -33,6 +33,7 @@ and replace it with
 
 4. Install ts_media `drush en ts_media`
 
+### If you've already done the above steps and deployed them, start here:
 From here down, you can only proceed if your database already believes the media module is uninstalled. You will need to deploy
 the code above to your database before you can proceed. This means two deploys, which can be done sequentially or over time.
 
