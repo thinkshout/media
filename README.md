@@ -50,7 +50,18 @@ and replace it with
 "thinkshout/media": "dev-ts_media_2",
 ```
 
-6. Run `drush updb` -- this should convert all your media_entity items into media items.
+6. Run `composer update` to get the latest thinkshout/ts_media module.
+
+7. Run `drush cr && drush updb` -- this should convert all your media_entity items into media items.
+
+Note: You'll see some expected warning when you run updb:
+
+```
+The following module is missing from the file system: media_entity_document bootstrap.inc:268                                                              [warning]
+The following module is missing from the file system: media_entity_image bootstrap.inc:268
+```
+
+Those are fine, and will go away after the updb.
 
 ## Things to check after installing
 

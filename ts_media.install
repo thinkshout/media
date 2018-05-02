@@ -1,0 +1,44 @@
+<?php
+
+/**
+ * @file
+ * Contains media.module.
+ */
+
+use Drupal\Core\Url;
+use Drupal\Core\Link;
+
+/**
+ * Implements hook_requirements().
+ */
+function ts_media_entity_requirements($phase) {
+  $link = Link::fromTextAndUrl(t('here'), Url::fromUri('https://github.com/thinkshout/media/tree/ts_media_2',array()))->toString();
+
+  if ($phase == 'install' && $this->moduleHandler->moduleExists('media')) {
+    $requirements['media'] = [
+      'title' => t('Media conflict'),
+      'value' => t('A media module is installed'),
+      'description' => t(
+        'The ts_media module should not be installed if a media module is already installed. For a path forward, visit @url',
+        ['@url' => $link]
+      ),
+      'severity' => REQUIREMENT_ERROR,
+    ];
+  }
+
+  if ($phase == 'update') {
+    if (!\Drupal::state()->get('media_entity_core_upgrade_started')) {
+      $checks = \Drupal::service('media_entity.cli')->validateDbUpdateRequirements();
+      foreach ($checks['errors'] as $key => $error_msg) {
+        $requirements['media_entity_upgrade_' . $key] = [
+          'title' => t('Media Entity'),
+          'value' => t('If you see an error about needing to uninstall a contributed Media module, visit @url', ['@url' => $link]),
+          'description' => $error_msg,
+          'severity' => REQUIREMENT_ERROR,
+        ];
+      }
+    }
+  }
+
+  return $requirements;
+}

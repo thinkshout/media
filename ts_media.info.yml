@@ -3,4 +3,5 @@ description: 'Media module for Drupal 8'
 type: module
 package: Media
 core: 8.x
-dependencies: { }
+dependencies:
+  - drupal:system (>=8.5)
