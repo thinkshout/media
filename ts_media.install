@@ -11,7 +11,7 @@ use Drupal\Core\Link;
 /**
  * Implements hook_requirements().
  */
-function ts_media_entity_requirements($phase) {
+function ts_media_requirements($phase) {
   $link = Link::fromTextAndUrl(t('here'), Url::fromUri('https://github.com/thinkshout/media/tree/ts_media_2',array()))->toString();
 
   if ($phase == 'install' && $this->moduleHandler->moduleExists('media')) {

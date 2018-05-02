@@ -73,3 +73,20 @@ switched to the new version there are only a few things to check.
 - The /admin/content/media page looks somewhat themed.
 
 and of course, test adding media to some items, both embedded and as a field.
+
+## Debugging errors on install or update
+
+If you're seeing errors when trying to install or update this module, you can find a path forward here.
+
+### Error 1: The ts_media module should not be installed if a media module is already installed
+
+If you see this error, you've come from one of two scenarios:
+
+1. I'm installing the ts_media_2 module on a brand new version of Drupal
+
+Don't do this! Instead use the bene_media module.
+
+2. I'm trying to install ts_media after moving away from the old thinkshout media module.
+
+You need to follow the deployment steps outlined above, with a two-step deployment process, for this module
+to be installable. Please check out the ts_media branch instead of this ts_media_2 branch.
