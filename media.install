@@ -8,6 +8,8 @@
 use Drupal\views\Entity\View;
 use \Drupal\Core\Config\ExtensionInstallStorage;
 use Drupal\editor\Entity\Editor;
+use Drupal\Core\Url;
+use Drupal\Core\Link;
 
 /**
  * Implements hook_install().
