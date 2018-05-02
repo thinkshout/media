@@ -8,6 +8,8 @@
 use Drupal\views\Entity\View;
 use \Drupal\Core\Config\ExtensionInstallStorage;
 use Drupal\editor\Entity\Editor;
+use Drupal\Core\Url;
+use Drupal\Core\Link;
 
 /**
  * Implements hook_install().
@@ -55,4 +57,21 @@ function media_install() {
       $format->save();
     }
   }
+}
+
+
+/**
+ * Implements hook_requirements().
+ */
+function media_requirements() {
+  $requirements = [];
+  $link = Link::fromTextAndUrl(t('here'), Url::fromUri('https://github.com/thinkshout/media/tree/ts_media#how-to-use-this-version-of-the-ts-media-module',array()))->toString();
+
+  $requirements['ts_media: Not compatible with core Media'] = [
+    'title' => t('Core Media'),
+    'description' => t("The Thinkshout Media module has been renamed. Follow instructions for upgrading @here.", ['@here' => $link]),
+    'severity' => REQUIREMENT_ERROR,
+  ];
+
+  return $requirements;
 }
