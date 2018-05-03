@@ -34,8 +34,7 @@ and replace it with
 4. Install ts_media `drush en ts_media`
 
 ### If you've already done the above steps and deployed them, start here:
-From here down, you can only proceed if your database already believes the media module is uninstalled. You will need to deploy
-the code above to your database before you can proceed. This means two deploys, which can be done sequentially or over time.
+If you've made it through steps 1-4 and have come this far, you're likely upgrading to Drupal 8.5 and wanting to move from using the media_entity module to using the Core media module. From this point down, you can only proceed if your database already believes the "media" module from Thinkshout is uninstalled and replaced with the "ts_media" module. You will need to deploy the code above to your live database before you can proceed. This means two deploys, which can be done sequentially or over time. The next steps are:
 
 5. Upgrade to ts_media_2
 
