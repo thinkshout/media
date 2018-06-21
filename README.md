@@ -74,6 +74,8 @@ switched to the new version there are only a few things to check.
 
 and of course, test adding media to some items, both embedded and as a field.
 
+Also, search any custom code for references to "media_entity", which should now be uninstalled. By and large these are found in use statements like this: `use Drupal\media_entity\Entity\Media;` which can be replaces with `use Drupal\media\Entity\Media;`
+
 ## Debugging errors on install or update
 
 If you're seeing errors when trying to install or update this module, you can find a path forward here.
