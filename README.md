@@ -68,7 +68,7 @@ Those are fine, and will go away after the updb.
 The Thinkshout Media module didn't really do a whole lot, so if you've just
 switched to the new version there are only a few things to check.
 
-- There is a Media link in the admin toolbar and a button to "Add a new Media" below it.
+- There is a Media link in the admin toolbar and a button to "Add a new Media" below it. If you do not see the "Add media" link under the "Content" dropdown in the admin toolbar, update the drupal/admin_toolbar to ^1.24.
 - There is a button to "Add media" on the /admin/content/media page
 - The /admin/content/media page looks somewhat themed.
 
