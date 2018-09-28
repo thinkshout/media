@@ -15,23 +15,13 @@ through composer, updating to this version is easy.
 
 `drush pmu media`
 
-2. Update your composer.json file:
+2. Update thinkshout media using composer:
 
-In your composer.json file find:
-
-```
-"thinkshout/media": "dev-8.x-1.x",
+```sh
+composer require thinkshout/media:dev-ts_media
 ```
 
-and replace it with
-
-```
-"thinkshout/media": "dev-ts_media",
-```
-
-3. Run `composer update` to get the latest thinkshout/ts_media module.
-
-4. Install ts_media `drush en ts_media`
+3. Install ts_media `drush en ts_media`
 
 ## Things to check after installing
 
