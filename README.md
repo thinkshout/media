@@ -15,44 +15,24 @@ through composer, updating to this version is a two-step process.
 
 `drush pmu media`
 
-2. Update your composer.json file:
+2. Update your thinkshout media using composer:
 
-In your composer.json file find:
-
-```
-"thinkshout/media": "dev-8.x-1.x",
+```sh
+composer require thinkshout/media:dev-ts_media
 ```
 
-and replace it with
-
-```
-"thinkshout/media": "dev-ts_media",
-```
-
-3. Run `composer update` to get the latest thinkshout/ts_media module.
-
-4. Install ts_media `drush en ts_media`
+3. Install ts_media `drush en ts_media`
 
 ### If you've already done the above steps and deployed them, start here:
 If you've made it through steps 1-4 and have come this far, you're likely upgrading to Drupal 8.5 and wanting to move from using the media_entity module to using the Core media module. From this point down, you can only proceed if your database already believes the "media" module from Thinkshout is uninstalled and replaced with the "ts_media" module. You will need to deploy the code above to your live database before you can proceed. This means two deploys, which can be done sequentially or over time. The next steps are:
 
 5. Upgrade to ts_media_2
 
-In your composer.json file find:
-
-```
-"thinkshout/media": "dev-ts_media",
+```sh
+composer require thinkshout/media:dev-ts_media_2
 ```
 
-and replace it with
-
-```
-"thinkshout/media": "dev-ts_media_2",
-```
-
-6. Run `composer update` to get the latest thinkshout/ts_media module.
-
-7. Run `drush cr && drush updb` -- this should convert all your media_entity items into media items.
+6. Run `drush cr && drush updb` -- this should convert all your media_entity items into media items.
 
 Note: You'll see some expected warning when you run updb:
 
