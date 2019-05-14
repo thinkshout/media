@@ -12,6 +12,7 @@ use Drupal\Core\Link;
  * Implements hook_requirements().
  */
 function ts_media_requirements($phase) {
+  $requirements = [];
   if ($phase == 'install' && \Drupal::moduleHandler()->moduleExists('media')) {
     $requirements['media'] = [
       'title' => t('Media'),
