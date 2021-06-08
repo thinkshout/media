@@ -1,42 +1,15 @@
-# Media Module (ThinkShout Edition)
+# Media Module (9.x compatible Edition)
 
-[![Build Status](https://travis-ci.org/thinkshout/media.svg?branch=8.x-1.x)](https://travis-ci.org/thinkshout/media) [![Scrutinizer](https://scrutinizer-ci.com/g/thinkshout/media/badges/quality-score.png?b=8.x-1.x)](https://scrutinizer-ci.com/g/thinkshout/media/?branch=8.x-1.x)
+This 9.x version of the module exists just so you can pull it in and uninstall it.
+Make sure to uninstall all the modules this one requires first:
 
-## Introduction
+"drupal/image_widget_crop": "2.1",
+"drupal/media_entity_image": "^1.2",
+"drupal/media_entity_document": "^1.1",
+"drupal/entity_embed": "^1.0-beta2",
+"drupal/entity_browser": "2.0-alpha2",
+"drupal/video_embed_field": "2.0-alpha2",
+"drupal/media_entity_twitter": "2.0-alpha2",
+"drupal/media_entity_instagram": "2.0-alpha1"
 
-The Media module provides an extensible framework for managing files and multimedia assets, regardless of whether they are hosted on your own site or a 3rd party site.
-
-Media's aim is to solve Drupal's long standing media handling problem.
-
-## Requirements
-
-* [Media Entity](https://www.drupal.org/project/media_entity)
-* [Media Entity Image](https://www.drupal.org/project/media_entity_image)
-* [Video Embed Field](https://www.drupal.org/project/video_embed_field)
-* [Media Entity Slideshow](https://www.drupal.org/project/media_entity_slideshow)
-* [Media Entity Instagram](https://www.drupal.org/project/media_entity_instagram)
-* [Media Entity Twitter](https://www.drupal.org/project/media_entity_twitter)
-* [Media Entity Document](https://www.drupal.org/project/media_entity_document)
-* [Slick Media](https://www.drupal.org/project/slick_media)
-* [Entity Browser](https://www.drupal.org/project/entity_browser)
-* [Dropzonejs](https://www.drupal.org/project/dropzonejs)
-* [Image Widget Crop](https://www.drupal.org/project/image_widget_crop)
-
-## Installation
-
-After downloading the module in the modules folder, visit the Extend (/admin/modules) page to enable the module. You might have to install the modules required before enabling this module.
-
-## Configuration
-
-1. Enable the module
-2. visit /media/add to add media content to website.
-3. Visit /admin/structure/media to edit the default media bundles.
-
-## Technical details
-
-@ToDo
-
-## Maintainers
-
-@ToDo
-
+If your site is using any of these modules itself, you should add them to your composer.json file.
