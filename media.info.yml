@@ -1,6 +1,0 @@
-name: Media
-description: 'Media module for Drupal 9'
-type: module
-package: Media
-core_version_requirement: ^8.8 || ^9
-dependencies: {  }
